@@ -1,104 +1,78 @@
----
+# 🇲🇼 Malawi District Graph Layout
 
-# Malawi District Graph Layout
-
-This project implements a *tier-aware and leaf-aware graph layout* in JavaScript, arranging Malawi’s district nodes in a 1x1 coordinate space. The output includes both structured layout data and a canvas-based visualization.
+This project implements a **tier-aware and leaf-aware graph layout** in JavaScript, arranging Malawi’s district nodes within a normalized 1×1 coordinate space. It outputs both structured layout data and an interactive canvas-based visualization.
 
 ---
 
 ## 📌 Features
 
-- Calculates graph layout using a central hub and tier logic
-- Avoids overlap and ensures visual balance
-- Outputs normalized (x, y) positions for each node
-- Includes an interactive HTML canvas visualization
-- Displays a warning if layout.json is missing or cannot be loaded
+- Calculates graph layout using a central hub and tier-based logic  
+- Prevents node overlap and maintains visual balance  
+- Outputs normalized `(x, y)` coordinates for each node  
+- Includes an interactive HTML canvas visualization  
+- Displays a warning if `layout.json` is missing or fails to load  
 
 ---
 
 ## 🗂 Project Structure
 
-├── data.json         # Input graph: nodes and edges 
-├── layout.js         # JavaScript layout generation script 
-├── layout.json       # Output: new coordinates for each node 
-├── index.html        # Canvas visualization of the graph 
-├── README.md         # Instructions and project overview
+├── data.json # Input graph: nodes and edges 
+├── layout.js # JavaScript layout generation script 
+├── layout.json # Output: computed coordinates for each node 
+├── index.html # Canvas-based visualization of the graph 
+├── README.md # Project overview and usage instructions
 
 ---
 
 ## 🔧 Requirements
 
-- [Node.js](https://nodejs.org/) (v14+)
-- [XAMPP](https://www.apachefriends.org/index.html) or any local web server (to view HTML due to browser CORS restrictions)
-- A modern browser (e.g., Chrome, Firefox, Edge)
+- Node.js (v14 or higher)  
+- XAMPP or any local web server (required due to browser CORS restrictions)  
+- A modern browser (e.g., Chrome, Firefox, Edge)  
 
 ---
 
 ## ⚙️ How to Run
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/g-worrior/graph-layout-code.git
 cd graph-layout-code
+```
 
-2. Generate the graph layout
-
+### 2. Generate the Graph Layout
+```
 node layout.js
+```
+This reads data.json, computes node positions, and writes them to layout.json.
+Final node positions will also be printed to the console.
 
-This reads data.json, computes new positions, and writes them to layout.json.
-
-You’ll also see each node’s final position printed to the console.
-
-
-
----
-
-3. View the visualization (IMPORTANT: Use a local server)
-
-Modern browsers block local file loading (CORS), so you must use a local server to open index.html.
-I recommend XAMPP (or VS Code’s Live Server).
+3. View the Visualization (IMPORTANT: Use a Local Server)
+Modern browsers block local file loading due to CORS policies. You must use a local server to open index.html.
 
 ✅ Using XAMPP
-
-1. Install and run XAMPP.
-
-
-2. Copy the project folder to:
+Install and launch XAMPP
+Copy the project folder to:
+```
 C:\xampp\htdocs\graph-layout-code
-
-
-3. Start Apache from the XAMPP Control Panel.
-
-
-4. Open your browser and navigate to:
+```
+Start Apache via the XAMPP Control Panel
+Open your browser and go to:
+```
 http://localhost/graph-layout-code/index.html
-
-
-
-⛔ If layout.json is missing
-
-A warning will appear in the browser console and/or canvas, notifying you that layout.json could not be loaded. Ensure you’ve run the layout.js script first.
-
-
----
+```
+⛔ Missing layout.json?
+If layout.json is missing or cannot be loaded, a warning will appear in the browser console and/or canvas. Make sure to run layout.js first.
 
 📸 Screenshots
-
-Console output with node positions
-
-Visual rendering in index.html
-
----
-
+Console output showing node positions
+Visual rendering of the graph in index.html
 💬 Contact
+For questions or feedback, feel free to reach out:
 
-For questions, feel free to reach out via GitHub: g-worrior, Email; pelikoswe@gmail.com
-
----
+GitHub: g-worrior
+Email: pelikoswe@gmail.com
 
 ✅ License
-
-This project is provided for evaluation and demonstration purposes.
-
----
+This project is provided for educational, evaluation, and demonstration purposes.
