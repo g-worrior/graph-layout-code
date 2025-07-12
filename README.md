@@ -72,6 +72,8 @@ If layout.json is missing or cannot be loaded, a warning will appear in the brow
 📸 Screenshots
 Console output showing node positions
 Visual rendering of the graph in index.html
+
+---
 💬 Contact
 For questions or feedback, feel free to reach out:
 ```
