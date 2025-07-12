@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Malawi District Graph Layout</title>
+  <style>
+    canvas {
+      border: 1px solid #ccc;
+      background-color: #fafafa;
+    }
+  </style>
+</head>
+<body>
+  <h2>Optimized Malawi District Graph</h2>
+  <canvas id="graphCanvas" width="800" height="800"></canvas>
+
+  <script>
+    async function drawGraph() {
+      const canvas = document.getElementById('graphCanvas');
+      const ctx = canvas.getContext('2d');
+      const width = canvas.width;
+      const height = canvas.height;
+
+      try {
+        const response = await fetch('layout.json');
+        const { nodes, edges } = await response.json();
+
+        // Draw edges first
+        ctx.strokeStyle = '#bbb';
+        edges.forEach(edge => {
+          const sourceId = Array.isArray(edge) ? edge[0] : edge.source;
+          const targetId = Array.isArray(edge) ? edge[1] : edge.target;
+
+          const source = nodes.find(n => n.id === sourceId);
+          const target = nodes.find(n => n.id === targetId);
+
+          if (!source || !target) {
+            console.warn(`Skipping edge: ${sourceId} → ${targetId}`);
+            return;
+          }
+
+          ctx.beginPath();
+          ctx.moveTo(source.x * width, source.y * height);
+          ctx.lineTo(target.x * width, target.y * height);
+          ctx.stroke();
+        });
+
+        // Draw nodes
+        nodes.forEach(node => {
+          const x = node.x * width;
+          const y = node.y * height;
+
+          ctx.beginPath();
+          ctx.arc(node.x * width, node.y * height, 5, 0, 2 * Math.PI);
+          ctx.fillStyle = '#2e86de';
+          ctx.fill();
+
+          // Draw label
+          ctx.fillStyle = 'black';
+          ctx.font = '14px san-serif';
+          ctx.fillText(node.id, node.x * width + 5, node.y * height - 8);
+        });
+
+      } catch (err) {
+        alert("Failed to load layout.json — please run the simulation first.");
+        console.error(err);
+      }
+    }
+
+    drawGraph();
+  </script>
+</body>
+</html>
