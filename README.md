@@ -36,9 +36,8 @@ This project implements a *tier-aware and leaf-aware graph layout* in JavaScript
 
 ## ⚙️ How to Run
 
-### 1. Clone the repository
-
 ```bash
+1. Clone the repository
 git clone https://github.com/g-worrior/graph-layout-code.git
 cd graph-layout-code
 
@@ -49,7 +48,6 @@ node layout.js
 This reads data.json, computes new positions, and writes them to layout.json.
 
 You’ll also see each node’s final position printed to the console.
-
 
 
 ---
