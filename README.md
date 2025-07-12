@@ -45,7 +45,7 @@ cd graph-layout-code
 
 ### 2. Generate the Graph Layout
 ```
-node layout.js
+node main.js
 ```
 This reads data.json, computes node positions, and writes them to layout.json.
 Final node positions will also be printed to the console.
@@ -65,7 +65,7 @@ Open your browser and go to:
 http://localhost/graph-layout-code/index.html
 ```
 ⛔ Missing layout.json?
-If layout.json is missing or cannot be loaded, a warning will appear in the browser console and/or canvas. Make sure to run layout.js first.
+If layout.json is missing or cannot be loaded, a warning will appear in the browser console and/or canvas. Make sure to run ``` node main.js ``` first. This generates the layout.json
 
 ---
 
