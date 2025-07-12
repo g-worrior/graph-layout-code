@@ -50,7 +50,7 @@ node layout.js
 This reads data.json, computes node positions, and writes them to layout.json.
 Final node positions will also be printed to the console.
 
-###3. View the Visualization (IMPORTANT: Use a Local Server)
+### 3. View the Visualization (IMPORTANT: Use a Local Server)
 Modern browsers block local file loading due to CORS policies. You must use a local server to open index.html.
 
 ✅ Using XAMPP
