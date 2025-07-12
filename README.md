@@ -1,4 +1,4 @@
-# 🇲🇼 Malawi District Graph Layout
+#Malawi District Graph Layout
 
 This project implements a **tier-aware and leaf-aware graph layout** in JavaScript, arranging Malawi’s district nodes within a normalized 1×1 coordinate space. It outputs both structured layout data and an interactive canvas-based visualization.
 
@@ -15,12 +15,13 @@ This project implements a **tier-aware and leaf-aware graph layout** in JavaScri
 ---
 
 ## 🗂 Project Structure
-
+```
 ├── data.json # Input graph: nodes and edges 
 ├── layout.js # JavaScript layout generation script 
 ├── layout.json # Output: computed coordinates for each node 
 ├── index.html # Canvas-based visualization of the graph 
 ├── README.md # Project overview and usage instructions
+```
 
 ---
 
@@ -65,14 +66,19 @@ http://localhost/graph-layout-code/index.html
 ⛔ Missing layout.json?
 If layout.json is missing or cannot be loaded, a warning will appear in the browser console and/or canvas. Make sure to run layout.js first.
 
+---
+
 📸 Screenshots
 Console output showing node positions
 Visual rendering of the graph in index.html
 💬 Contact
 For questions or feedback, feel free to reach out:
-
+```
 GitHub: g-worrior
 Email: pelikoswe@gmail.com
+```
+
+---
 
 ✅ License
 This project is provided for educational, evaluation, and demonstration purposes.
